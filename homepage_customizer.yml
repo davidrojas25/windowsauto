@@ -15,4 +15,8 @@
     - name: Customize the homepage with Jinja2 Template
       win_template:
         src: ./templates/homepage.j2
-        dest: C:\Inetpub\wwwroot\index.html     
+        dest: C:\Inetpub\wwwroot\index.html
+    - name: Copy Red Hat Ansibl Image
+      win_copy:
+        src: ./Ansible-Red.png
+        dest: C:\Inetpub\wwwroot\ 
