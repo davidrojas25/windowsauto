@@ -1,0 +1,15 @@
+---
+- name: install the iis web service
+  hosts: windows
+
+  tasks:
+
+    - name: install selected feature
+      win_feature:
+        name: {{ feature }}
+        state: present
+
+    - name: start selected service
+      win_service:
+        name: {{ service }}
+        state: started
