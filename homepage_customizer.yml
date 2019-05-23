@@ -16,7 +16,7 @@
       win_template:
         src: ./templates/homepage.j2
         dest: C:\Inetpub\wwwroot\index.html
-    - name: Copy Red Hat Ansibl Image
+    - name: Copy Red Hat Ansible Image
       win_copy:
         src: ./Ansible-Red.png
         dest: C:\Inetpub\wwwroot\ 
