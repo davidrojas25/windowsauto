@@ -10,5 +10,5 @@
     - name: Install multiple packages
       win_chocolatey:
         name: "{{ choco_packages }}"
-        state: present
+        state: "{{ app_state }}"
 
