@@ -1,0 +1,9 @@
+---
+- name: install the iis web service
+  hosts: windows
+
+  tasks:
+    - name: Install multiple packages
+      win_chocolatey:
+        name: "{{ choco_packages }}"
+        state: present

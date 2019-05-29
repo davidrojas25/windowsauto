@@ -1,0 +1,14 @@
+---
+- name: Install Application from an MSI 
+  hosts: windows
+ 
+  tasks:
+    - name: Download the MSI installer
+      win_get_url:
+        url: "https://the.earth.li/~sgtatham/putty/latest/w64/putty-64bit-0.71-installer.msi"
+        dest: 'C:\Users\Administrator\Downloads\'
+
+    - name: Install MSI
+      win_package: 
+        path: 'C:\Users\Administrator\Downloads\putty-64bit-0.71-installer.msi'
+        state: present
