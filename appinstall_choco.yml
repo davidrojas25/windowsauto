@@ -1,14 +1,14 @@
 ---
-- name: install the iis web service
+- name: install chocolatey package on Windows host
   hosts: windows
 
   tasks:
 
     - name: Chocolatey temporary patch
       win_shell: C:\ProgramData\chocolatey\bin\choco.exe feature disable --name="useEnhancedExitCodes"
-      
+
     - name: Install multiple packages
       win_chocolatey:
-        name: "{{ choco_packages }}"
+        name: "{{ choco_packages.split('\n') }}"
         state: present
 
