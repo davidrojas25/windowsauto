@@ -5,5 +5,5 @@
   tasks:
     - name: Install multiple packages
       win_chocolatey:
-        name: "{{ choco_packages }}"
+        name: "{{ choco_packages.split('\n') }}"
         state: present
