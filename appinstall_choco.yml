@@ -10,16 +10,23 @@
     - name: print out ansible vars
       debug:
         var: ansible_distribution
+
+    - name: check location of choco.exe
+      win_stat:
+        path: C:\ProgramData\chocolatey\bin\choco.exe
+      register: path_to_choco  
     
     - name: Chocolatey temporary patch
       win_shell: C:\ProgramData\chocolatey\bin\choco.exe feature disable --name="useEnhancedExitCodes"
       ignore_errors: true
-      when: ansible_distribution.find("Server") != -1 or ansible_distribution.find("Windows 10 Pro") != -1 
+      when: path_to_choco.stat.exists
+      # when: ansible_distribution.find("Server") != -1 or ansible_distribution.find("Windows 10 Pro") != -1 
 
     - name: Chocolatey temporary patch
       win_shell: C:\ProgramData\chocoportable\bin\choco.exe feature disable --name="useEnhancedExitCodes"
       ignore_errors: true
-      when: ansible_distribution.find("Windows 10 Home") != -1
+      when: path_to_choco.stat.exists == False
+      # when: ansible_distribution.find("Windows 10 Home") != -1
 
     - name: Install multiple packages
       win_chocolatey:
