@@ -4,6 +4,10 @@
 
   tasks:
 
+    - name: print out ansible vars
+      debug:
+        var: ansible_facts
+    
     - name: Chocolatey temporary patch
       win_shell: C:\ProgramData\chocolatey\bin\choco.exe feature disable --name="useEnhancedExitCodes"
       ignore_errors: true
