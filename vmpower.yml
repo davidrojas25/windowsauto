@@ -1,0 +1,32 @@
+---
+- name: install the iis web service
+  hosts: vmware_exsi
+
+  vars:
+    list_vms:
+        - rojaslab_linux001
+        - rojaslab_linux002
+        - rojaslab_win001
+        - rojaslab_linux003
+        - rojaslab_linux_gns3002
+        - rojaslab_linux004
+    vcenter_hostname: 192.168.150.10
+    vcenter_username: root
+    vcenter_password: Sup3rFly!
+    datacenter_name: asdfasdf
+    vm_state: power-off  
+ 
+
+  tasks:
+    - name: power on or off VM
+      vmware_guest_powerstate:
+        hostname: "{{ vcenter_hostname }}"
+        username: "{{ vcenter_username }}"
+        password: "{{ vcenter_password }}"
+        validate_certs: no
+        folder: "/ha-datacenter/vm/"
+        name: "{{ item }}"
+        state: "{{ vm_state }"
+      with_items: {{ list_vms }}  
+      delegate_to: localhost
+      register: deploy
