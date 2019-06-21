@@ -9,6 +9,7 @@
         - rojaslab_win001
         - rojaslab_linux003
         - rojaslab_linux_gns3002
+        - rojaslab_linux004
     vcenter_hostname: 192.168.150.10
     vcenter_username: root
     vcenter_password: Sup3rFly!
