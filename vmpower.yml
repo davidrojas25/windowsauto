@@ -12,8 +12,7 @@
     vcenter_hostname: 192.168.150.10
     vcenter_username: root
     vcenter_password: Sup3rFly!
-    datacenter_name: asdfasdf
-    vm_state: power-off  
+    vm_state: powered-off  
  
 
   tasks:
@@ -25,7 +24,7 @@
         validate_certs: no
         folder: "/vmfs/volumes/datastore1/"
         name: "{{ item }}"
-        state: "{{ vm_state }"
+        state: "{{ vm_state }}"
       with_items: "{{ list_vms }}"  
       delegate_to: localhost
       register: deploy
