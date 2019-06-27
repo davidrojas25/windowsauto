@@ -3,16 +3,17 @@
   hosts: windows
 
   vars:
-    catagory1: Critical Updates
-    catagory2: Security Updates
+    category1: Critical Updates
+    category2: Security Updates
+    blacklist_package: 
 
   tasks:
 
     - name: Install Windows updates
       win_updates:
         category_names:
-          - "{{ catagory1 }}"
-          - "{{ catagory2 }}"
+          - "{{ category1 }}"
+          - "{{ category2 }}"
         blacklist: "{{ blacklist_package }}"
         reboot: yes
         reboot_timeout: 1400
