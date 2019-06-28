@@ -1,6 +1,6 @@
 ---
 - name: Add Multiple Windows Users
-  hosts: windows
+  hosts: all
   gather_facts: False
 
   roles:
