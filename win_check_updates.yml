@@ -1,10 +1,10 @@
 ---
 - name: Check Windows Update
-  hosts: "{{ win_vm }}"
+  hosts: windows
   gather_facts: False
 
   tasks:
   - name: Check Windows Update
     include_role:
-      name: check_win_updates
-      vars_from: "passwd.yml"
+      name: win_check_updates
+      vars_from: "password.yml"

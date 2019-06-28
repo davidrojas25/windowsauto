@@ -1,0 +1,22 @@
+Collecting pywinrm
+  Downloading https://files.pythonhosted.org/packages/0d/12/13a3117bbd2230043aa32dcfa2198c33269665eaa1a8fa26174ce49b338f/pywinrm-0.3.0-py2.py3-none-any.whl
+Collecting xmltodict (from pywinrm)
+  Using cached https://files.pythonhosted.org/packages/28/fd/30d5c1d3ac29ce229f6bdc40bbc20b28f716e8b363140c26eff19122d8a5/xmltodict-0.12.0-py2.py3-none-any.whl
+Requirement already satisfied: requests>=2.9.1 in /usr/lib/python2.7/site-packages (from pywinrm) (2.22.0)
+Collecting requests-ntlm>=0.3.0 (from pywinrm)
+  Downloading https://files.pythonhosted.org/packages/03/4b/8b9a1afde8072c4d5710d9fa91433d504325821b038e00237dc8d6d833dc/requests_ntlm-1.1.0-py2.py3-none-any.whl
+Requirement already satisfied: six in /usr/lib/python2.7/site-packages (from pywinrm) (1.12.0)
+Requirement already satisfied: chardet<3.1.0,>=3.0.2 in /usr/lib/python2.7/site-packages (from requests>=2.9.1->pywinrm) (3.0.4)
+Requirement already satisfied: idna<2.9,>=2.5 in /usr/lib/python2.7/site-packages (from requests>=2.9.1->pywinrm) (2.8)
+Requirement already satisfied: urllib3!=1.25.0,!=1.25.1,<1.26,>=1.21.1 in /usr/lib/python2.7/site-packages (from requests>=2.9.1->pywinrm) (1.25.3)
+Requirement already satisfied: certifi>=2017.4.17 in /usr/lib/python2.7/site-packages (from requests>=2.9.1->pywinrm) (2019.6.16)
+Collecting ntlm-auth>=1.0.2 (from requests-ntlm>=0.3.0->pywinrm)
+  Downloading https://files.pythonhosted.org/packages/d5/3d/1c54e92f62bbc747a638da94adb439f99dc2d2f3041fe41a06b0da4f2808/ntlm_auth-1.3.0-py2.py3-none-any.whl
+Requirement already satisfied: cryptography>=1.3 in /usr/lib64/python2.7/site-packages (from requests-ntlm>=0.3.0->pywinrm) (2.7)
+Requirement already satisfied: enum34; python_version < "3" in /usr/lib/python2.7/site-packages (from cryptography>=1.3->requests-ntlm>=0.3.0->pywinrm) (1.1.6)
+Requirement already satisfied: asn1crypto>=0.21.0 in /usr/lib/python2.7/site-packages (from cryptography>=1.3->requests-ntlm>=0.3.0->pywinrm) (0.24.0)
+Requirement already satisfied: cffi!=1.11.3,>=1.8 in /usr/lib64/python2.7/site-packages (from cryptography>=1.3->requests-ntlm>=0.3.0->pywinrm) (1.12.3)
+Requirement already satisfied: ipaddress; python_version < "3" in /usr/lib/python2.7/site-packages (from cryptography>=1.3->requests-ntlm>=0.3.0->pywinrm) (1.0.16)
+Requirement already satisfied: pycparser in /usr/lib/python2.7/site-packages (from cffi!=1.11.3,>=1.8->cryptography>=1.3->requests-ntlm>=0.3.0->pywinrm) (2.19)
+Installing collected packages: xmltodict, ntlm-auth, requests-ntlm, pywinrm
+Successfully installed ntlm-auth-1.3.0 pywinrm-0.3.0 requests-ntlm-1.1.0 xmltodict-0.12.0
