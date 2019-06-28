@@ -1,5 +1,5 @@
 - name: Using a different voice and a start sound
   win_say:
     start_sound_path: C:\Windows\Media\ding.wav
-    msg:  I'm sorry, Dave. I'm afraid I can't do that.
+    msg:  "{{ voice_message }}"
     voice: Microsoft David
