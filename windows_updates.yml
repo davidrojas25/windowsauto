@@ -1,21 +1,13 @@
 ---
 - name: install the iis web service
   hosts: windows
+  gather_facts: False
 
-  vars:
-    category1: Critical Updates
-    category2: Security Updates
-    blacklist_package: 
+  roles:
+    - win_updates
 
-  tasks:
+ 
 
-    - name: Install Windows updates
-      win_updates:
-        category_names:
-          - "{{ category1 }}"
-          - "{{ category2 }}"
-        blacklist: "{{ blacklist_package }}"
-        reboot: yes
-        reboot_timeout: 1400
+
 
 
