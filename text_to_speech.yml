@@ -1,0 +1,7 @@
+---
+- name: Add Multiple Windows Users
+  hosts: windows
+  gather_facts: False
+
+  roles:
+    - text_to_speech

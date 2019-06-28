@@ -1,0 +1,5 @@
+- name: Using a different voice and a start sound
+  win_say:
+    start_sound_path: C:\Windows\Media\ding.wav
+    msg: Warning, deployment commencing in 5 minutes, please log out.
+    voice: Microsoft Hazel Desktop
