@@ -7,4 +7,4 @@
   - name: Check Windows Update
     include_role:
       name: win_check_updates
-      vars_from: "password.yml"
+      vars_from: "passwrd.yml"
