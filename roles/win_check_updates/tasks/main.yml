@@ -1,7 +1,7 @@
 ---
 - name: "Search and return list of found updates (if any)"
   win_updates:
-    category_names: "{{ win_update_category }}"
+    category_names: Updates
     state: searched
   register: list_of_updates
 
@@ -83,7 +83,7 @@
     port: 587
     username: "{{ gmail_account }}"
     password: "{{ gmail_account_password }}"
-    to: David Rojas <colombianclimber@gmail.com>
+    to: David Rojas <rojasautolab@gmail.com>
     subject: "Ansible Report"
     body: "The list of required Windows Update for the Windows VMs can be found in the attached file"
     attach:
