@@ -1,4 +1,3 @@
-    
 ---
 - name: "Search and return list of found updates (if any)"
   win_updates:
