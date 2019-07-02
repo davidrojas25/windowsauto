@@ -2,4 +2,5 @@
 category: ['Updates'] #good example of single item of list
 gmail_account: "rojasautolab@gmail.com"
 gmail_account_password: "Zapata99!"
+sendto_email: "David Rojas <rojasautolab@gmail.com>"
 
