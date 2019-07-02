@@ -1,5 +1,5 @@
 ---
-category: "Updates"
+category: ['Updates'] #good example of single item of list
 gmail_account: "rojasautolab@gmail.com"
 gmail_account_password: "Zapata99!"
 
