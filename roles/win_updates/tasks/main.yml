@@ -6,3 +6,7 @@
     whitelist: "{{ whitelist_package }}"
     reboot: yes
     reboot_timeout: 1400
+
+- name: Display filtered reason
+  debug:
+    var: filtered_updates[0].filtered_reason   
