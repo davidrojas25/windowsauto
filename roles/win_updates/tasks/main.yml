@@ -1,9 +1,7 @@
 --- 
 - name: Install Windows updates
   win_updates:
-    category_names:
-      - "{{ category1 }}"
-      - "{{ category2 }}"
+    category_names: "{{ categories }}"
     blacklist: "{{ blacklist_package }}"
     whitelist: "{{ whitelist_package }}"
     reboot: yes

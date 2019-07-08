@@ -1,5 +1,4 @@
 ---
-category1: Critical Updates
-category2: Security Updates
+categories: ['Updates']
 blacklist_package: 
 whitelist_package: 
