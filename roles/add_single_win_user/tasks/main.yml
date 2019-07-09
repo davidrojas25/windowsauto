@@ -21,12 +21,12 @@
     username: "{{ gmail_account }}"
     password: "{{ gmail_account_password }}"
     to: "{{ sendto_email }}"
-    subject: 'New Employee Account Creation for "{{ win_user_firstname }}" "{{ win_user_surname }}"'
+    subject: 'New Employee Account Creation for {{ win_user_firstname }} {{ win_user_surname }}'
     body: | 
-             Your new employee, "{{ win_user_firstname }}" can login for this first time with the follow account info.
+             Your new employee, {{ win_user_firstname }} can login for this first time with the follow account info.
              They will be prompted to change thier password.
-             username: "{{ win_user_name }}"
-             password: "{{ win_user_password }}"
-             email address: "{{ win_user_email }}"
+             username: {{ win_user_name }}
+             password: {{ win_user_password }}
+             email address: {{ win_user_email }}
   delegate_to: localhost
   
