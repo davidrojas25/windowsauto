@@ -13,3 +13,15 @@
     password: "{{ win_user_password }}"
     state: present
     email: "{{ win_user_email }}"
+
+- name: Send Email with Report
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: "{{ gmail_account }}"
+    password: "{{ gmail_account_password }}"
+    to: "{{ sendto_email }}"
+    subject: "New Employee Account Creation"
+    body: 'Your new employee can login for this first time with the follow account info. They will be prompted to change thier password.\n username: "{{ win_user_name }}"\n "{{ win_user_password }}"'
+  delegate_to: localhost
+  
