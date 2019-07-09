@@ -1,0 +1,18 @@
+---
+- name: install iis
+  win_feature:
+    name: Web-Server
+    state: present
+
+- name: start iis service
+  win_service:
+    name: W3Svc
+    state: started
+- name: Customize the homepage with Jinja2 Template
+  win_template:
+    src: ./roles/homepage_customizer/templates/homepage.j2
+    dest: C:\Inetpub\wwwroot\index.html
+- name: Copy Red Hat Ansible Image
+  win_copy:
+    src: ./roles/homepage_customizer/files/Ansible-Red.png
+    dest: C:\Inetpub\wwwroot\ 
