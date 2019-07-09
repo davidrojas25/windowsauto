@@ -1,2 +1,2 @@
 ---
-win_domain_scope: domainlocal
+win_group_scope: domainlocal
