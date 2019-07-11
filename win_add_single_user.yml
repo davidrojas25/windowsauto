@@ -1,6 +1,6 @@
 ---
 - name: Add Windows User
-  hosts: southeast
+  hosts: windows
   gather_facts: False
 
   roles:
