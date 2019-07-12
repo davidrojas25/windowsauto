@@ -2,8 +2,8 @@
 - name: Install Windows updates
   win_updates:
     category_names: "{{ categories }}"
-    blacklist: "{{ blacklist_package }}"
-    whitelist: "{{ whitelist_package | default(omit) }}"
+    blacklist: "{{ blacklist_package | default(omit, true) }}"
+    whitelist: "{{ whitelist_package | default(omit, true) }}"
     reboot: yes
     reboot_timeout: 1400
 
