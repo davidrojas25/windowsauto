@@ -4,7 +4,7 @@
 
   vars:
     choco_packages: git
-    state: present
+    app_state: present
 
   tasks:
 
