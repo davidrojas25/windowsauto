@@ -16,3 +16,5 @@
   win_copy:
     src: ./roles/homepage_customizer/files/Ansible-Red.png
     dest: C:\Inetpub\wwwroot\ 
+
+    
