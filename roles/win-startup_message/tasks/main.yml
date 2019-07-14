@@ -1,0 +1,12 @@
+---
+- name: Adding Updating Legal Notice Title
+  win_regedit:
+    path: HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\System
+    name: legalnoticecaption
+    data: "{{ title_legal_notice }}"
+
+- name: Ading Updating Legal Notice Text
+  win_regedit:
+    path: HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\System
+    name: legalnoticetext
+    data: "{{ text_legal_notice }}"

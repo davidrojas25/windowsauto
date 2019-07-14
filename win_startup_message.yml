@@ -1,0 +1,8 @@
+---
+- name: Add Windows User
+  hosts: windows
+  gather_facts: False
+
+  roles:
+    - win_startup_message
+    
