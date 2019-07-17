@@ -5,6 +5,6 @@
 
   roles:
     - change_guest_acct
-    - set_max_password_age
+    - max_password_age
     - password_encryption
     - system_events
