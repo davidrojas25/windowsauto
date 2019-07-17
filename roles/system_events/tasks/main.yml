@@ -2,4 +2,5 @@
   win_security_policy:
     section: Event Audit
     key: AuditSystemEvents
-    value: 1
+    value: "{{ system_events }}"
+

@@ -2,4 +2,5 @@
   win_security_policy:
     section: System Access
     key: MaximumPasswordAge
-    value: 31
+    value: "{{ max_password_age }}"
+

@@ -2,4 +2,5 @@
   win_security_policy:
     section: System Access
     key: NewGuestName
-    value: Guest Account
+    value: "{{ guest_account_name }}"
+

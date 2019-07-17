@@ -2,4 +2,5 @@
   win_security_policy:
     section: System Access
     key: ClearTextPassword
-    value: 0
+    value: "{{ clear_text_password }}"
+
