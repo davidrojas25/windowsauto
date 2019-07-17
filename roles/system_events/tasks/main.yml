@@ -1,0 +1,5 @@
+- name: enable system events
+  win_security_policy:
+    section: Event Audit
+    key: AuditSystemEvents
+    value: 1

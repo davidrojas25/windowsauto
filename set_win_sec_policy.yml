@@ -1,0 +1,10 @@
+---
+- name: Set Windows Security Policies
+  hosts: windows
+  gather_facts: False
+
+  roles:
+    - change_guest_acct
+    - set_max_password_age
+    - password_encryption
+    - system_events

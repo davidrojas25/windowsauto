@@ -6,7 +6,6 @@
     state: present
   loop: "{{ win_user_groups }}"
 
-
 - name: Create AD User
   win_domain_user:
     name: "{{ win_user_name }}"
@@ -32,4 +31,6 @@
              password: {{ win_user_password }}
              email address: {{ win_user_email }}
   delegate_to: localhost
+  
+
   

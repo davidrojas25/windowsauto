@@ -1,0 +1,5 @@
+- name: do not store passwords using reversible encryption
+  win_security_policy:
+    section: System Access
+    key: ClearTextPassword
+    value: 0

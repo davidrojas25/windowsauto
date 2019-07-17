@@ -1,0 +1,5 @@
+- name: change the guest account name
+  win_security_policy:
+    section: System Access
+    key: NewGuestName
+    value: Guest Account

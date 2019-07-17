@@ -10,3 +10,6 @@
     path: HKLM:\Software\Microsoft\Windows\CurrentVersion\Policies\System
     name: legalnoticetext
     data: "{{ text_legal_notice }}"
+
+
+
