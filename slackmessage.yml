@@ -1,6 +1,6 @@
 ---
 - name: Slack Notification
-  hosts: windows
+  hosts: localhost
   become: yes
   become_user: root
 
