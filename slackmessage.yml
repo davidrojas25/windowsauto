@@ -1,5 +1,6 @@
 ---
 - name: Slack Notification
+  hosts: windows
   become: yes
   become_user: root
 
