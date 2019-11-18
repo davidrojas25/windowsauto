@@ -1,0 +1,22 @@
+---
+- name: install chocolatey package on Windows host
+  hosts: networkadmins
+
+  tasks:
+
+    - name: Install multiple packages
+      win_chocolatey:
+        name: "{{ choco_packages_na }}"
+        state: "{{ app_state_na }}"
+
+- name: install chocolatey package on Windows host
+  hosts: research
+
+  tasks:
+
+    - name: Install multiple packages
+      win_chocolatey:
+        name: "{{ choco_packages_research }}"
+        state: "{{ app_state_research }}"        
+
+        

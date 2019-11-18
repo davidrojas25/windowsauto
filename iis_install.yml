@@ -2,8 +2,6 @@
 - name: install the iis web service
   hosts: windows
 
-  
-
   tasks:
     - name: install iis
       win_feature:

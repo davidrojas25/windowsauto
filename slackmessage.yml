@@ -1,0 +1,14 @@
+---
+- name: Slack Notification
+  become: yes
+  become_user: root
+
+  tasks:
+  - name: Sending message to slack channel
+    slack:
+      token: 'ba39128609d7beba01411570c75170bb'
+      channel: "redhat-rise-all"
+      domain: "cgspoc.slack.com"
+      parse: "full"
+      color: "good"
+      msg: 'The blah playbook was ran on successfully.'
