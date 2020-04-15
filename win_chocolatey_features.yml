@@ -1,0 +1,17 @@
+---
+- name: gather and display chocolatey facts
+  hosts: windows
+
+  vars:
+    factWanted: config
+
+  tasks:
+
+    - name: gather facts
+      win_chocolatey_facts:
+
+    - name: display config facts
+      debug:
+        var: ansible_chocolatey."{{ factWanted }}"  
+
+
