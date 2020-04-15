@@ -1,17 +1,16 @@
 ---
-- name: gather and display chocolatey facts
+- name: enabling or disabling chocolatey features
   hosts: windows
 
   vars:
-    factWanted: config
+    feature: stopOnFirstPackageFailure
+    state: enabled
 
   tasks:
 
-    - name: gather facts
-      win_chocolatey_facts:
-
-    - name: display config facts
-      debug:
-        var: ansible_chocolatey."{{ factWanted }}"  
+    - name: enable or disable Chocolatey features
+      win_chocolatey_feature:
+        name: "{{ feature }}"
+        state: "{{ state }}"
 
 

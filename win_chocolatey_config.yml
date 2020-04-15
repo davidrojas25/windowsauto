@@ -1,17 +1,18 @@
 ---
-- name: gather and display chocolatey facts
+- name: configuring Chocolatey
   hosts: windows
 
   vars:
-    factWanted: config
+    config_item: cacheLocation
+    state: enabled
+    value: C:\chocolatey_temp2
 
   tasks:
 
-    - name: gather facts
-      win_chocolatey_facts:
-
-    - name: display config facts
-      debug:
-        var: ansible_chocolatey."{{ factWanted }}"  
+    - name: set configuration parameter
+      win_chocolatey_config:
+        name: "{{ config_item }}"
+        state: "{{ state }}"
+        value: "{{ value }}"
 
 

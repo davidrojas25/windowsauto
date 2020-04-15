@@ -5,6 +5,9 @@
   vars:
     factWanted: config
 
+  collections:
+    - chocolatey.chocolatey
+
   tasks:
 
     - name: gather facts
