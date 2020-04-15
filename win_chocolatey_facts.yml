@@ -15,6 +15,6 @@
 
     - name: display config facts
       debug:
-        var: ansible_chocolatey."{{ factWanted }}"  
+        var: ansible_chocolatey.{{ factWanted }}  
 
 
