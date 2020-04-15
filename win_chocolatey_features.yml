@@ -6,6 +6,9 @@
     feature: stopOnFirstPackageFailure
     state: enabled
 
+  collections:
+    - chocolatey.chocolatey  
+
   tasks:
 
     - name: enable or disable Chocolatey features

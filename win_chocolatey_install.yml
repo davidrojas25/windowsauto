@@ -6,6 +6,9 @@
     choco_packages: git
     app_state: present
 
+  collections:
+    - chocolatey.chocolatey  
+
   tasks:
 
     - name: Install multiple packages

@@ -6,7 +6,9 @@
     config_item: cacheLocation
     state: enabled
     value: C:\chocolatey_temp2
-
+    
+  collections:
+    - chocolatey.chocolatey
   tasks:
 
     - name: set configuration parameter
