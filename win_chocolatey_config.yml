@@ -4,9 +4,9 @@
 
   vars:
     config_item: cacheLocation
-    state: enabled
+    state: present
     value: C:\chocolatey_temp2
-    
+
   collections:
     - chocolatey.chocolatey
   tasks:

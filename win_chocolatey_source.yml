@@ -1,0 +1,19 @@
+---
+- name: modifying chocolatey source
+  hosts: windows
+
+  vars:
+    feature: chocolatey
+    state: enabled
+
+  collections:
+    - chocolatey.chocolatey  
+
+  tasks:
+
+    - name: modifying chocolatey source
+      win_chocolatey_feature:
+        name: "{{ feature }}"
+        state: "{{ state }}"
+
+
