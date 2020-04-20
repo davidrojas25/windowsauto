@@ -1,6 +1,10 @@
 ---
 # tasks file for choco_reporting
 
+    - name: gather facts
+      win_chocolatey_facts: 
+      register: list_packages
+   
     - name: Clean Up Reports Directory if it exists
       file:
         path: chocoreports
