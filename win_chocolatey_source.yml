@@ -3,8 +3,11 @@
   hosts: windows
 
   vars:
-    feature: chocolatey
+    name: chocolatey
     state: enabled
+    source: https://chocolatey-server/chocolatey
+    username: testusername
+    password: testpassword
 
   collections:
     - chocolatey.chocolatey  
@@ -12,8 +15,10 @@
   tasks:
 
     - name: modifying chocolatey source
-      win_chocolatey_feature:
-        name: "{{ feature }}"
+      win_chocolatey_source:
+        name: "{{ name }}"
         state: "{{ state }}"
-
+        source: "{{ source }}"
+        source_username: "{{ username }}"
+        source_password: "{{ password }}"
 
