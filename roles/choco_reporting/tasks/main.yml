@@ -4,6 +4,10 @@
     - name: gather facts
       win_chocolatey_facts: 
       register: list_packages
+
+    - name: print data for checking
+      debug: 
+        var: list_packages  
    
     - name: Clean Up Reports Directory if it exists
       file:
