@@ -1,0 +1,23 @@
+---
+- name: gather and display chocolatey facts
+  hosts: windows
+
+  vars:
+    factWanted: config
+
+  collections:
+    - chocolatey.chocolatey
+
+  roles:
+      - choco_facts
+      - choco_reporting  
+
+
+
+
+
+
+      
+
+
+

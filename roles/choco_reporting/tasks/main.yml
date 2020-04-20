@@ -1,0 +1,88 @@
+---
+# tasks file for choco_reporting
+
+    - name: Clean Up Reports Directory if it exists
+      file:
+        path: chocoreports
+        state: absent
+      delegate_to: localhost
+      run_once: yes
+
+    - name: Create Reports Directory
+      file:
+        path: chocoreports
+        state: directory
+        mode: 0755
+      delegate_to: localhost
+      run_once: yes
+
+    - name: Template Rendering
+      template:
+        src: individual_vm_report.html.j2
+        dest: "chocoreports/z{{ inventory_hostname }}_interim_report.html"
+      delegate_to: localhost
+
+    - name: Create Interim Report
+      template:
+        src: consolidated_vms_report.html.j2
+        dest: "chocoreports/Consolidated_VMs_Report.html"
+      delegate_to: localhost
+      run_once: yes
+
+    - name: Consolidate Interim Report
+      assemble:
+        src: chocoreports/
+        dest: chocoreports/Consolidated_VMs_Report.html
+      delegate_to: localhost
+      run_once: yes
+
+    - name: Generate Remaining Portion of Report
+      template:
+        src: consolidated_vms_report_last_block.html.j2
+        dest: "chocoreports/consolidated_vms_report_last_block.html"
+      delegate_to: localhost
+      run_once: yes
+
+    - name: Get the List of Interim Reports
+      find:
+        paths: chocoreports/
+        patterns: '*_interim_report.html'
+      register: interim_reports_to_delete
+      delegate_to: localhost
+      run_once: yes
+
+    - name: Clean Up Interim Reports
+      file:
+        path: "{{ item.path }}"
+        state: absent
+      loop: "{{ interim_reports_to_delete.files }}"
+      delegate_to: localhost
+      run_once: yes
+
+    - name: Consolidate Final Report
+      assemble:
+        src: chocoreports/
+        dest: chocoreports/Consolidated_VMs_Report.html
+      delegate_to: localhost
+      run_once: yes
+
+    - name: Final Clean Up
+      file:
+        path: chocoreports/consolidated_vms_report_last_block.html
+        state: absent
+      delegate_to: localhost
+      run_once: yes
+
+    - name: Send Email with Report
+      mail:
+        host: smtp.gmail.com
+        port: 587
+        username: "{{ gmail_account }}"
+        password: "{{ gmail_account_password }}"
+        to: "{{ sendto_email }}"
+        subject: "Ansible Report"
+        body: "The list of required Windows Update for the Windows VMs can be found in the attached file"
+        attach:
+        - chocoreports/Consolidated_VMs_Report.html
+      delegate_to: localhost
+      run_once: yes
