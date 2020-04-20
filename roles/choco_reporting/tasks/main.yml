@@ -7,7 +7,7 @@
 
     - name: print data for checking
       debug: 
-        var: list_packages  
+        var: list_packages.ansible_chocolatey.packages  
    
     - name: Clean Up Reports Directory if it exists
       file:
