@@ -3,8 +3,8 @@
             <td>
                <ul>
 {% for pack in list_packages.ansible_facts.ansible_chocolatey.packages %} 
-                  <li>{{ list_packages.ansible_facts.ansible_chocolatey.packages.['package'] }}</li>
-                  <li>{{ list_packages.ansible_facts.ansible_chocolatey.packages.['version'] }}</li>
+                  <li>{{ list_packages.ansible_facts.ansible_chocolatey.packages[pack].package }}</li>
+                  <li>{{ list_packages.ansible_facts.ansible_chocolatey.packages[pack].version }}</li>
 {% endfor %}
                </ul>
             </td>
