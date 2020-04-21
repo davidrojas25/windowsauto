@@ -88,8 +88,8 @@
         username: "{{ gmail_account }}"
         password: "{{ gmail_account_password }}"
         to: "{{ sendto_email }}"
-        subject: "Ansible Report"
-        body: "The list of required Windows Update for the Windows VMs can be found in the attached file"
+        subject: "Chocolatey Ansible Report"
+        body: "The list of Packages installed by Chocolatey"
         attach:
         - chocoreports/Consolidated_VMs_Report.html
       delegate_to: localhost
