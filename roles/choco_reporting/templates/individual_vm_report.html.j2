@@ -1,23 +1,30 @@
          <tr>
             <td>{{ inventory_hostname }}</td>
-            <td>
-               <ul>
-{% for pack in list_packages.ansible_facts.ansible_chocolatey.packages %} 
-                  <tr>
-                  <li>{{ pack.package }}</li>
-                  </tr>
-{% endfor %}
-               </ul>
-            </td>
-            <td>
-               <ul>
-{% for pack in list_packages.ansible_facts.ansible_chocolatey.packages %} 
-                  <tr>
-                  <li>{{ pack.version }}</li>
-                  </tr>
-{% endfor %}
-               </ul>
-            </td>
          </tr>
+            
+            
+{% for pack in list_packages.ansible_facts.ansible_chocolatey.packages %} 
+            <tr>
+            <td>
+               <ul>
+                  
+                  <li>{{ pack.package }}</li>
+                  
+               </ul>
+            </td> 
+            </tr>    
+{% endfor %}
+              
+         
+{% for pack in list_packages.ansible_facts.ansible_chocolatey.packages %} 
+               <tr>
+               <td>   
+                  <ul>
+                    <li>{{ pack.version }}</li>
+                  <ul>
+                <td>  
+               </tr>
+{% endfor %}
+            
 
          {# | dict2items #}
