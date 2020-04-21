@@ -1,11 +1,9 @@
-         <tr>
-            <td>{{ inventory_hostname }}</td>
-        
-            
+              
             
 {% for pack in list_packages.ansible_facts.ansible_chocolatey.packages %} 
             
                <tr>
+                  <td>{{ inventory_hostname }}</td>
                   <td>
                   <li>{{ pack.package }}</li>
                   </td>
@@ -13,11 +11,10 @@
                   <li>{{ pack.version }}</li>
                   </td>
                </tr>
-            
-              
+                 
 {% endfor %}
               
-          </tr> 
+    
 
             
 
