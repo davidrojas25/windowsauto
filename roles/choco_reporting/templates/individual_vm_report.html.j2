@@ -2,9 +2,9 @@
             <td>{{ inventory_hostname }}</td>
             <td>
                <ul>
-{% for package in list_packages.ansible_facts.ansible_chocolatey.packages %} 
-                  <li>{{ list_packages.ansible_facts.ansible_chocolatey.packages.package['package'] | dict2items}}</li>
-                  <li>{{ list_packages.ansible_facts.ansible_chocolatey.packages.package['version'] | dict2items}}</li>
+{% for pack in list_packages.ansible_facts.ansible_chocolatey.packages %} 
+                  <li>{{ list_packages.ansible_facts.ansible_chocolatey.packages.pack['package'] }}</li>
+                  <li>{{ list_packages.ansible_facts.ansible_chocolatey.packages.pack['version'] }}</li>
 {% endfor %}
                </ul>
             </td>
