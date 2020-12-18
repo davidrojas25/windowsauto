@@ -4,7 +4,13 @@
   win_copy:
     src: ./roles/windows_test_webpage/files/index.html
     dest: C:\Inetpub\wwwroot\
+
 - name: Copy Red Hat Ansible Image
   win_copy:
     src: ./roles/windows_test_webpage/files/rh_ansible.jpg
     dest: C:\Inetpub\wwwroot\
+
+- name: Copy Windows Image
+  win_copy:
+    src: ./roles/windows_test_webpage/files/winlogo.jpg
+    dest: C:\Inetpub\wwwroot\    
