@@ -13,7 +13,6 @@
         name: W3Svc
         state: started
 
-    - name: Create website index.html
-      win_copy:
-        content: "{{ iis_test_message }}"
-        dest: C:\Inetpub\wwwroot\index.html
+    - name: Create test web page
+      include_role:
+        name: "/roles/windows_test_webpage"
