@@ -15,4 +15,4 @@
 
     - name: Create test web page
       include_role:
-        name: "/roles/windows_test_webpage"
+        name: "./roles/windows_test_webpage"
